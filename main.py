@@ -237,7 +237,7 @@ class_names = [
 ]
 
 # Helper function to predict cancer using TFLite
-def predict_cancer(image_path, confidence_threshold=0.85):
+def predict_cancer(image_path, confidence_threshold=0.99):
     try:
         IMAGE_SIZE = 256
         img = load_img(image_path, target_size=(IMAGE_SIZE, IMAGE_SIZE))
@@ -298,9 +298,7 @@ def predict():
         # If model returns -1, classify as "Not an oral cancer image"
         if result == -1:
             return jsonify({
-                'class': "This photo may not be compatible. It seems non-cancerous, another object, or has scale/quality issues.",
-                'confidence': round(confidence * 100, 2),
-                'image_url': f"/uploads/{unique_filename}"
+                'class': "This photo may not be compatible. It seems non-cancerous, another object, or has scale/quality issues."
             })
 
         # Return prediction result
