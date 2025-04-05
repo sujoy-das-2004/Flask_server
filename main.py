@@ -299,9 +299,7 @@ def predict():
         # If model returns -1, classify as "Not an oral cancer image"
         if result == -1:
             return jsonify({
-                'class': "This photo may not be compatible. It seems non-cancerous, another object, or has scale/quality issues.",
-                'confidence': round(confidence * 100, 2),
-                'image_url': f"/uploads/{unique_filename}"
+                'class': "This photo may not be compatible. It seems non-cancerous, another object, or has scale/quality issues."
             })
 
         # Return prediction result
