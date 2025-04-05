@@ -238,7 +238,7 @@ class_names = [
 ]
 
 # Helper function to predict cancer using TFLite
-def predict_cancer(image_path, confidence_threshold=0.85):
+def predict_cancer(image_path, confidence_threshold=0.958):
     try:
         IMAGE_SIZE = 256
         img = load_img(image_path, target_size=(IMAGE_SIZE, IMAGE_SIZE))
