@@ -180,10 +180,9 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for React support
 
 # Google Drive model file ID
-MODEL_ID = "1__7RCc4JBIGz5W8zujUVtakIvHkvW5GE"  # Replace with your actual Google Drive file ID
+MODEL_ID = "1aQ4-X0HCMkFtj7ZBfcAchOQoQe8rvGa7"  # Replace with your actual Google Drive file ID
 MODEL_PATH = os.getenv('MODEL_PATH', 'cancer_model_catch.tflite')  # Path for TFLite model
 H5_MODEL_PATH = 'cancer_model_catch.h5'  # Path for .h5 model
-#https://drive.google.com/file/d/1__7RCc4JBIGz5W8zujUVtakIvHkvW5GE/view?usp=sharing
 # Use absolute path for uploads
 UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER', os.path.join(os.getcwd(), 'uploads'))
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -234,7 +233,7 @@ output_details = interpreter.get_output_details()
 # Class names for prediction
 class_names = [
     'Carcinoma in Situ', 'Commissural Squamous cell carcinoma', 'Gum cancer',
-    'Mucoepidermoid Carcinoma', 'Oral Cancer', 'Oral Lichen Planus', 'Oral Tumors'
+    'Mucoepidermoid Carcinoma', 'Oral Cancer', 'Oral Lichen Planus', 'Oral Tumors','This is not Oral related Oral Images'
 ]
 
 # Helper function to predict cancer using TFLite
@@ -326,4 +325,3 @@ def home():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
-
