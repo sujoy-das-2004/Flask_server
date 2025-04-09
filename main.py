@@ -64,7 +64,7 @@ class_names = [
 ]
 
 # Predict function
-def predict_cancer(image_path, confidence_threshold=0.80):
+def predict_cancer(image_path, confidence_threshold=0.85):
     try:
         img = load_img(image_path, target_size=(256, 256))
         img_arr = img_to_array(img) / 255.0
